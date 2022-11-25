@@ -1,0 +1,35 @@
+.homeDesign {
+  display: grid;
+  align-items: start;
+  justify-content: center;
+  width: 100vw;
+  height: 95vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  align-content: center;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  justify-items: center;
+}
+.homeCard {
+  display: grid;
+  justify-content: space-around;
+  align-content: space-around !important;
+  font-style: italic;
+  color: white;
+  opacity: 60%;
+  background-color: brown;
+  width: 360px;
+  height: 260px;
+  border-bottom-left-radius: 60%;
+  border-top-right-radius: 60%;
+  border-color: orange;
+  border-style: dashed;
+  border-width: 2;
+  text-shadow: 4;
+}
+
+.dropDown {
+  color: white;
+}

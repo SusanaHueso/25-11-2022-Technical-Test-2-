@@ -1,0 +1,11 @@
+.headerDesign {
+  display: grid;
+  justify-content: start;
+  width: 100vw;
+  height: 5vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  align-content: space-evenly;
+  background-color: rgb(253, 156, 72);
+}
