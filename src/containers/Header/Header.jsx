@@ -2,9 +2,9 @@ import React from "react";
 import { CustomDropdown } from "../../components/CustomDropDown/CustomDropDown";
 import "./Header.css";
 export const Header = () => {
-  const title = "Easy recipies";
-  const option1 = "Main dishes";
-  const option2 = "Dessert";
+  const title = "Menu";
+  const option1 = "Home";
+  const option2 = "Body";
   return (
     <div className="headerDesign">
       {" "}
