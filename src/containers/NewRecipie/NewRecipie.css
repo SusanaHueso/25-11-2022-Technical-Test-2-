@@ -8,3 +8,16 @@
 .groupsDesign {
   margin-bottom: 5%;
 }
+
+.buttonTooDesign {
+  display: flex;
+  align-content: space-between;
+  flex-wrap: wrap;
+  flex-direction: column;
+  /* justify-content: flex-start; */
+  align-items: center;
+}
+
+.buttonOnly {
+  margin-top: 5%;
+}
