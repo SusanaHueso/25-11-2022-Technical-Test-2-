@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
-import "./NewRecipie.css";
-import { Button, ButtonGroup } from "react-bootstrap";
+import "./NewRecipe.css";
+import { Button } from "react-bootstrap";
 import "/Users/susana.huesodevis/Documents/GeeksHubs exercises/technical-test-2/src/config.jsx";
-export const NewRecipie = () => {
+export const NewRecipe = () => {
   const [name, setName] = useState("");
   const [ingredients, setIngredients] = useState("");
   const [instructions, setInstructions] = useState("");
@@ -14,8 +14,14 @@ export const NewRecipie = () => {
       instructions: instructions,
     },
   ];
-  const handleJson = () => {
-    JSON.stringify(global.config.jsonDict.push(json));
+  const handleJson = (jsonData, filename) => {
+    const fileData = JSON.stringify(jsonData[0]);
+    const blob = new Blob([fileData], { type: "text/plain" });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.download = `${filename}.json`;
+    link.href = url;
+    link.click();
   };
   console.log("soy el json", global.config.jsonDict);
   return (
@@ -23,12 +29,12 @@ export const NewRecipie = () => {
       <Form className="newRecipieDesign">
         <Form.Group className="groupsDesign" controlId="RecipieName">
           <Form.Label>
-            <b>Recipie Name</b>
+            <b>recipe Name</b>
           </Form.Label>
           <Form.Control
             onBlur={(event) => setName(event.target.value)}
             type="text"
-            placeholder="Enter the new recipie name"
+            placeholder="Enter the new recipe name"
           />
           <Form.Text>
             Ideas: Sushi, Spanish omelette, Roasted chicken...
@@ -36,22 +42,22 @@ export const NewRecipie = () => {
         </Form.Group>
         <Form.Group className="groupsDesign" controlId="RecipieIngredients">
           <Form.Label>
-            <b>Recipie Ingredients</b>
+            <b>recipe Ingredients</b>
           </Form.Label>
           <Form.Control
             type="text"
-            placeholder="Enter the new recipie ingredients"
+            placeholder="Enter the new recipe ingredients"
             onBlur={(event) => setIngredients(event.target.value)}
           />
           <Form.Text>Ideas: Eggs, Butter...</Form.Text>
         </Form.Group>
         <Form.Group controlId="RecipieInstructions">
           <Form.Label>
-            <b>Recipie Instructions</b>
+            <b>recipe Instructions</b>
           </Form.Label>
           <Form.Control
             type="text"
-            placeholder="Enter the new recipie instructions"
+            placeholder="Enter the new recipe instructions"
             onBlur={(event) => setInstructions(event.target.value)}
           />
           <Form.Text>
@@ -60,7 +66,9 @@ export const NewRecipie = () => {
         </Form.Group>
       </Form>
       <div className="buttonOnly">
-        <Button onClick={() => handleJson()}>Save Recipie</Button>
+        <Button onClick={() => handleJson(json, json[0]["name"])}>
+          Save recipe
+        </Button>
       </div>
     </div>
   );

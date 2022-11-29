@@ -7,12 +7,12 @@ export const Header = () => {
   const title = "Menu";
   const option1 = "Home";
   const option2 = "Recipies";
-  const titleButton = "Add New Recipie";
+  const titleButton = "Add New recipe";
   return (
     <div className="headerDesign">
       {" "}
       <CustomDropdown title={title} option1={option1} option2={option2} />
-      <Button href="/NewRecipie">{titleButton}</Button>
+      <Button href="/NewRecipe">{titleButton}</Button>
     </div>
   );
 };

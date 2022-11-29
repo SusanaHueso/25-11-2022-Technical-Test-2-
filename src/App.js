@@ -3,7 +3,7 @@ import Body from './components/Body/Body';
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import {Home} from './containers/Home/Home'
 import {Header} from './components/Header/Header'
-import { NewRecipie } from './containers/NewRecipie/NewRecipie';
+import { NewRecipe } from './containers/NewRecipe/NewRecipe';
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
       <BrowserRouter>
          <Header></Header>
         <Routes>
-        <Route path='/NewRecipie' element={<NewRecipie/>}/>   
+        <Route path='/NewRecipe' element={<NewRecipe/>}/>   
           <Route path='/Body' element={<Body/>}/>   
           <Route path='/' element={<Home/>}/>   
         </Routes>
