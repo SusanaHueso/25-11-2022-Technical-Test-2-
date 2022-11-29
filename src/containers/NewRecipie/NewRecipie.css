@@ -1,0 +1,10 @@
+.newRecipieDesign {
+  display: flex !important;
+  flex-direction: column !important;
+  width: 60% !important;
+  margin-left: 10% !important;
+  margin-top: 10% !important;
+}
+.groupsDesign {
+  margin-bottom: 5%;
+}
