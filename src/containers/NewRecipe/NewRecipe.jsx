@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import "./NewRecipe.css";
 import { Button } from "react-bootstrap";
-import "/Users/susana.huesodevis/Documents/GeeksHubs exercises/technical-test-2/src/config.jsx";
 export const NewRecipe = () => {
   const [name, setName] = useState("");
   const [ingredients, setIngredients] = useState("");

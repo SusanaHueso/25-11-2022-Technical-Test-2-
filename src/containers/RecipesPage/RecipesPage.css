@@ -1,5 +1,5 @@
-.recipiesDesign {
-  height: 100vh;
+.RecipesDesign {
+  height: -20vh;
   width: 100vw;
   display: flex;
   flex-direction: column;
@@ -16,4 +16,11 @@
   align-items: center;
   align-content: stretch;
   margin-bottom: 16px;
+}
+
+.buttonDesign {
+  background-color: #8aa94d !important;
+  border-color: green;
+  margin-right: 12px;
+  position: relative;
 }

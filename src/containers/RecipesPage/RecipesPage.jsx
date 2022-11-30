@@ -3,9 +3,9 @@ import { Button } from "react-bootstrap";
 import { getAllMeals } from "../../services/apiCalls";
 import Meal from "../Meal/Meal";
 
-import "./RecipiesPage.css";
+import "./RecipesPage.css";
 
-const RecipiesPage = () => {
+const RecipesPage = () => {
   const [meals, setMeals] = useState([]);
   //necessary to not rerender all meals when meals === 0
   const [firstRender, setFirstRender] = useState(true);
@@ -26,12 +26,13 @@ const RecipiesPage = () => {
   }, [meals]);
 
   return (
-    <div className="recipiesDesign">
+    <div className="RecipesDesign">
       {meals.map((meal, index) => {
         return (
           <div key={index} className="mealAndButtonDesign">
             <Meal value={meal} key={meal.idMeal} />
             <Button
+              className="buttonDesign"
               onClick={() => {
                 const newMeals = meals.filter((m) => m.idMeal !== meal.idMeal);
                 setMeals([...newMeals]);
@@ -47,4 +48,4 @@ const RecipiesPage = () => {
   );
 };
 
-export default RecipiesPage;
+export default RecipesPage;

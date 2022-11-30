@@ -6,13 +6,15 @@ import "./Header.css";
 export const Header = () => {
   const title = "Menu";
   const option1 = "Home";
-  const option2 = "Recipies";
+  const option2 = "Recipes";
   const titleButton = "Add New recipe";
   return (
     <div className="headerDesign">
       {" "}
       <CustomDropdown title={title} option1={option1} option2={option2} />
-      <Button href="/NewRecipe">{titleButton}</Button>
+      <Button className="buttonDesign" href="/NewRecipe">
+        {titleButton}
+      </Button>
     </div>
   );
 };

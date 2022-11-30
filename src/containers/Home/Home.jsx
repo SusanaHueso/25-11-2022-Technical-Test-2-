@@ -6,16 +6,14 @@ import image from "../../images/image.jpg";
 
 import { Table } from "react-bootstrap";
 export const Home = () => {
-
   return (
     <div className="homeDesign" style={{ backgroundImage: `url(${image})` }}>
-    
       <Table>
         <Card className="homeCard">
           <Card.Body>
             <Card.Title>
               <h1>
-                <b>Tasty Recipies</b>
+                <b>Tasty Recipes</b>
               </h1>
             </Card.Title>
           </Card.Body>
