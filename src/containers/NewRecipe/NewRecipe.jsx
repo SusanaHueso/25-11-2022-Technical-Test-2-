@@ -23,13 +23,7 @@ export const NewRecipe = () => {
     link.href = url;
     link.click();
   };
-  const checkFields = (funct) => {
-    const { myfunc } = funct();
-    myfunc();
-    if (name.length > 0 && ingredients.length > 0 && instructions.length > 0) {
-      setButtonError(false);
-    }
-  };
+
   return (
     <div className="buttonTooDesign">
       <Form className="newRecipieDesign">

@@ -20,6 +20,7 @@ const RecipesPage = () => {
         .catch((error) => {
           if (error.response.status === 404) {
             setError("Invalid endpoint call, bad url");
+            console.log(error);
           }
         });
     }

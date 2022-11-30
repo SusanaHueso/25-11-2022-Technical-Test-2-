@@ -1,5 +1,4 @@
 import React from "react";
-import { CustomDropdown } from "../../components/CustomDropDown/CustomDropDown";
 import "./Home.css";
 import Card from "react-bootstrap/Card";
 import image from "../../images/image.jpg";
