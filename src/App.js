@@ -1,3 +1,4 @@
+import React from 'react';
 import './App.css';
 import Body from './components/Body/Body';
 import { Routes, Route, BrowserRouter } from 'react-router-dom';

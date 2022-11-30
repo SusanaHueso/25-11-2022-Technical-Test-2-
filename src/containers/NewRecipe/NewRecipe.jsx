@@ -7,6 +7,7 @@ export const NewRecipe = () => {
   const [name, setName] = useState("");
   const [ingredients, setIngredients] = useState("");
   const [instructions, setInstructions] = useState("");
+  const [buttonError, setButtonError] = useState(false);
   var json = [
     {
       name: name,
@@ -23,17 +24,24 @@ export const NewRecipe = () => {
     link.href = url;
     link.click();
   };
-  console.log("soy el json", global.config.jsonDict);
+  const checkFields = (funct) => {
+    const { myfunc } = funct();
+    myfunc();
+    if (name.length > 0 && ingredients.length > 0 && instructions.length > 0) {
+      setButtonError(false);
+    }
+  };
   return (
     <div className="buttonTooDesign">
       <Form className="newRecipieDesign">
         <Form.Group className="groupsDesign" controlId="RecipieName">
           <Form.Label>
-            <b>recipe Name</b>
+            <b>Recipe Name</b>
           </Form.Label>
           <Form.Control
             onBlur={(event) => setName(event.target.value)}
             type="text"
+            name="name"
             placeholder="Enter the new recipe name"
           />
           <Form.Text>
@@ -42,23 +50,25 @@ export const NewRecipe = () => {
         </Form.Group>
         <Form.Group className="groupsDesign" controlId="RecipieIngredients">
           <Form.Label>
-            <b>recipe Ingredients</b>
+            <b>Recipe Ingredients</b>
           </Form.Label>
           <Form.Control
-            type="text"
-            placeholder="Enter the new recipe ingredients"
             onBlur={(event) => setIngredients(event.target.value)}
+            type="text"
+            name="ingredients"
+            placeholder="Enter the new recipe ingredients"
           />
           <Form.Text>Ideas: Eggs, Butter...</Form.Text>
         </Form.Group>
         <Form.Group controlId="RecipieInstructions">
           <Form.Label>
-            <b>recipe Instructions</b>
+            <b>Recipe Instructions</b>
           </Form.Label>
           <Form.Control
-            type="text"
-            placeholder="Enter the new recipe instructions"
             onBlur={(event) => setInstructions(event.target.value)}
+            type="text"
+            name="instructions"
+            placeholder="Enter the new recipe instructions"
           />
           <Form.Text>
             Ideas: Preheat the oven to 200C/180C, Mix ingredients...
@@ -66,10 +76,23 @@ export const NewRecipe = () => {
         </Form.Group>
       </Form>
       <div className="buttonOnly">
-        <Button onClick={() => handleJson(json, json[0]["name"])}>
+        <Button
+          onClick={() =>
+            name.length > 0 && ingredients.length > 0 && instructions.length > 0
+              ? (handleJson(json, json[0]["name"]), setButtonError(false))
+              : setButtonError(true)
+          }
+        >
           Save recipe
         </Button>
       </div>
+      {buttonError && (
+        <p style={{ color: "red" }}>
+          {" "}
+          "Some of the fields were not filled, please complete the form before
+          clicking again"
+        </p>
+      )}
     </div>
   );
 };

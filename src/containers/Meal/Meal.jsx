@@ -6,13 +6,12 @@ const Meal = ({ value }) => {
   const [show, setShow] = useState(false);
   const handleClick = (id) => {
     setShow(!show);
-    console.log(id);
   };
   const name = value.strMeal;
   const instructions = value.strInstructions;
-  
+
   return (
-    <div key={value.idMeal}>
+    <div className="mealAndText" key={value.idMeal}>
       <img
         className="mealImage"
         src={value.strMealThumb}

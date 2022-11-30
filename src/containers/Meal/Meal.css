@@ -1,5 +1,10 @@
 .mealImage {
-
-    height: 8em;
-    width: 8em;
+  height: 8em;
+  width: 8em;
+}
+.mealAndText {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
 }
